@@ -1,0 +1,52 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+.env
+
+# =========================
+# Secrets & Keys
+# =========================
+keys/
+*.key
+
+# =========================
+# Logs
+# =========================
+logs/*
+!logs/.gitkeep
+
+# =========================
+# User Uploads
+# =========================
+storage/uploads/*
+!storage/uploads/.gitkeep
+
+# =========================
+# Encrypted Files
+# =========================
+storage/encrypted/*
+!storage/encrypted/.gitkeep
+
+# =========================
+# Downloaded Files
+# =========================
+storage/downloads/*
+!storage/downloads/.gitkeep
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# VS Code
+# =========================
+.vscode/
