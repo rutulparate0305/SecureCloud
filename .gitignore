@@ -42,6 +42,12 @@ storage/downloads/*
 !storage/downloads/.gitkeep
 
 # =========================
+# Recycle Bin
+# =========================
+storage/recycle_bin/*
+!storage/recycle_bin/.gitkeep
+
+# =========================
 # macOS
 # =========================
 .DS_Store
