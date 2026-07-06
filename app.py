@@ -1,3 +1,4 @@
+
 from utils.encryption import generate_key
 from utils.auth import register_user, login_user
 
