@@ -1,112 +1,149 @@
-# 🔐 SecureCloudStorage
+# 🔐 Secure Cloud Storage
 
-A secure cloud storage application built with Python that focuses on secure file management, encryption, authentication, and activity logging.
+A secure cloud storage system built from scratch in Python to explore real-world cybersecurity concepts, secure software development, and backend engineering.
 
-## 📌 Overview
-
-SecureCloudStorage is a backend-focused project designed to simulate the core functionalities of a secure cloud storage system. The project emphasizes security, maintainability, and modular design while providing a foundation for future web and cloud deployment.
+> This project is being developed incrementally with a focus on learning industry-standard security practices rather than just building features.
 
 ---
 
-## ✨ Features
+## 📊 Project Status
 
-- 👤 User Registration & Login
-- 🔒 Secure Password Hashing
-- 🔐 File Encryption before Storage
-- 📥 Secure File Download with Decryption
-- 📁 File Upload & Management
-- 🔍 Search Files
-- 🗑️ Secure File Deletion
-- 📝 Activity Logging (Audit Trail)
-- 📂 User-specific File Isolation
-- 🛡️ Input Validation & Error Handling
+- ✅ Phase 1 Completed
+- 🚧 Phase 2 In Progress
+- 🔜 Phase 3 Planned
+- 🔜 Phase 4 Planned
+
+## ✨ Current Features
+
+### Authentication
+- User Registration & Login
+- Password hashing using **bcrypt**
+- SQLite-based user management
+- Duplicate username prevention
+
+### File Management
+- Upload files
+- Download files
+- Delete files
+- Restore deleted files (Recycle Bin)
+- Permanent file deletion
+- Search files
+- Dashboard with storage statistics
+
+### Security
+- File encryption using Fernet (AES-based symmetric encryption)
+- Secure password hashing with bcrypt
+- Activity logging
+- User isolation for stored files
+
+### Database
+- SQLite integration
+- Automatic database initialization
+- Users stored in relational database instead of JSON
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠 Tech Stack
 
 - Python 3
+- SQLite
+- bcrypt
 - Cryptography (Fernet)
-- JSON
 - Git & GitHub
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 SecureCloudStorage/
 │
 ├── app.py
-├── auth.py
-├── file_manager.py
-├── utils/
-├── users/
-├── storage/
-│   ├── uploads/
-│   ├── encrypted/
-│   └── downloads/
+├── database/
+│   └── secure_cloud.db
+├── keys/
 ├── logs/
-├── requirements.txt
-└── README.md
+├── storage/
+│   ├── encrypted/
+│   ├── downloads/
+│   ├── recycle_bin/
+│   └── uploads/
+├── utils/
+│   ├── auth.py
+│   ├── database.py
+│   ├── encryption.py
+│   ├── file_handler.py
+│   ├── logger.py
+│   └── password.py
+└── requirements.txt
 ```
 
 ---
 
-## 🚀 Future Roadmap
+## 🚀 Project Roadmap
 
-- 🌐 Flask Web Application
-- ☁️ Cloud Deployment (AWS)
-- 🔑 Google / Microsoft OAuth Login
-- 📧 Email Verification
-- 🔐 Two-Factor Authentication (2FA)
-- 🗑️ Recycle Bin with Auto Deletion
-- 🤖 AI-powered Security Assistant
-- 📊 Storage Dashboard & Analytics
+### ✅ Phase 1 (Completed)
+- CLI application
+- Authentication
+- File encryption
+- Upload / Download
+- Recycle Bin
+- Activity Logs
 
----
+### 🚧 Phase 2 (In Progress)
+- SQLite migration ✅
+- bcrypt authentication ✅
+- File metadata management
+- SHA-256 integrity verification
+- Storage quotas
+- Per-user encryption keys
 
-## ⚙️ Installation
+### 🔜 Phase 3
+- Flask Web Interface
+- User Dashboard
+- REST APIs
 
-Clone the repository:
-
-```bash
-git clone https://github.com/rutulparate0305/SecureCloudStorage.git
-```
-
-Navigate to the project:
-
-```bash
-cd SecureCloudStorage
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the application:
-
-```bash
-python app.py
-```
+### ☁️ Phase 4
+- AWS Deployment
+- Object Storage
+- Docker
+- HTTPS
 
 ---
 
-## 🎯 Project Status
+## 📈 What I'm Learning
 
-**Phase 1 Completed ✅**
+This project is helping me gain practical experience with:
 
-Current focus:
+- Secure Authentication
+- Cryptography
+- Password Security
+- SQLite & Databases
+- File Systems
 - Backend Development
-- Security Features
-- Preparing for Flask Integration
+- Software Architecture
+- Git & GitHub
+- Secure Coding Practices
 
 ---
 
-## 👨‍💻 Author
+## 📌 Upcoming Features
+
+- SHA-256 file integrity verification
+- Metadata management
+- Storage quotas
+- Per-user encryption keys
+- Cloud deployment
+- JWT Authentication
+- HTTPS
+- Docker
+
+---
+
+## ⭐ Author
 
 **Rutul Parate**
 
-Learning by building real-world cybersecurity and cloud security projects.
+Cybersecurity Student | Python | Backend Development | Secure Software Engineering
+
+This repository documents my journey of building a secure cloud storage system while learning real-world software engineering and cybersecurity concepts.
