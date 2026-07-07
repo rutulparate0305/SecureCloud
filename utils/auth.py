@@ -1,6 +1,6 @@
 from utils.logger import log_activity
 from utils.file_handler import upload_file, download_file , delete_file, search_files, view_logs,restore_file,permanent_delete 
-import hashlib
+from utils.password import hash_password,verify_password
 from utils.file_handler import(get_total_files,
                                get_storage_used,
                                get_recycle_count,
@@ -17,8 +17,8 @@ def register_user():
         print("Username already exists.")
         return
     
-    # Maintaining the password security by converting it into hashed code
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+    # Maintaining the password security by converting it into hashed code using bcrypt
+    hashed_password = hash_password(password)
 
     add_user(username,hashed_password) 
     print("Registration successfull")
@@ -35,11 +35,9 @@ def login_user():
         print("Invalid username or passowrd")
         return
     
-    # Maintaning password integrity after login by converting it to hashed pwd
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
     
     stored_password = user[2] 
-    if hashed_password == stored_password:
+    if verify_password(password,stored_password):
         log_activity(f"{username} logged in")
         print(f"\n Welcome, {username}")
         print("\n ====== DASHBOARD ======")
