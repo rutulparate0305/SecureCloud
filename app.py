@@ -1,11 +1,11 @@
-
 from utils.encryption import generate_key
 from utils.auth import register_user, login_user
-
+from utils.database import initialize_database
 
 def main():
     
     generate_key()
+    initialize_database()
     
     while True: 
      print("=" * 35)
