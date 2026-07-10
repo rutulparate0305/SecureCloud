@@ -1,3 +1,6 @@
+from utils.encryption import generate_key
+from cryptography.fernet import Fernet
+from utils.database import add_user, get_user, save_user_key
 from utils.logger import log_activity
 from utils.file_handler import upload_file, download_file , delete_file, search_files, view_logs,restore_file,permanent_delete 
 from utils.password import hash_password,verify_password
@@ -5,8 +8,6 @@ from utils.file_handler import(get_total_files,
                                get_storage_used,
                                get_recycle_count,
  )
-from utils.database import add_user, get_user
-
 
 def register_user():
     username = input("Enter username: ").strip()
@@ -21,6 +22,8 @@ def register_user():
     hashed_password = hash_password(password)
 
     add_user(username,hashed_password) 
+    user_key = generate_key()
+    save_user_key(username,user_key)
     print("Registration successfull")
     
     log_activity(f"{username} registered.")    
