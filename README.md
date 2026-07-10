@@ -1,59 +1,94 @@
 # 🔐 Secure Cloud Storage
 
-A secure cloud storage system built from scratch in Python to explore real-world cybersecurity concepts, secure software development, and backend engineering.
+A secure cloud storage system built from scratch in Python to explore real-world cybersecurity concepts, secure software development, encryption, and backend engineering.
 
-> This project is being developed incrementally with a focus on learning industry-standard security practices rather than just building features.
+> This project is being developed incrementally with a focus on implementing industry-standard security practices rather than simply building features.
 
 ---
 
-## 📊 Project Status
+# 📊 Project Status
 
 - ✅ Phase 1 Completed
-- 🚧 Phase 2 In Progress
-- 🔜 Phase 3 Planned
-- 🔜 Phase 4 Planned
+- ✅ Phase 2 Completed
+- 🔜 Phase 3 Planned (Flask Web Application)
+- 🔜 Phase 4 Planned (Cloud Deployment)
 
-## ✨ Current Features
+---
 
-### Authentication
+# ✨ Features
+
+## 🔑 Authentication
+
 - User Registration & Login
-- Password hashing using **bcrypt**
+- Secure password hashing using **bcrypt**
 - SQLite-based user management
 - Duplicate username prevention
 
-### File Management
-- Upload files
-- Download files
+## 📁 File Management
+
+- Secure file upload
+- Secure file download
 - Delete files
 - Restore deleted files (Recycle Bin)
 - Permanent file deletion
-- Search files
-- Dashboard with storage statistics
+- File search
+- User dashboard with storage statistics
 
-### Security
-- File encryption using Fernet (AES-based symmetric encryption)
-- Secure password hashing with bcrypt
-- Activity logging
-- User isolation for stored files
+## 🔒 Security
 
-### Database
-- SQLite integration
+- File encryption using **Fernet** (AES-based symmetric encryption)
+- **Unique encryption key generated for every registered user**
+- Secure password hashing with **bcrypt**
+- SHA-256 checksum generation for file integrity verification
+- User activity logging
+- User-isolated encrypted storage
+
+## 🗄 Database
+
+- SQLite relational database
 - Automatic database initialization
-- Users stored in relational database instead of JSON
+- User authentication data
+- File metadata management
+- Per-user encryption key management
 
 ---
 
-## 🛠 Tech Stack
+# 🏗 Architecture
+
+```
+                User
+                  │
+                  ▼
+        Authentication (bcrypt)
+                  │
+                  ▼
+            SQLite Database
+        ┌─────────┼─────────┐
+        │         │         │
+      Users    File Metadata  Encryption Keys
+                  │
+                  ▼
+         Encryption Layer (Fernet)
+                  │
+                  ▼
+          Encrypted File Storage
+```
+
+---
+
+# 🛠 Tech Stack
 
 - Python 3
 - SQLite
 - bcrypt
 - Cryptography (Fernet)
-- Git & GitHub
+- hashlib (SHA-256)
+- Git
+- GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 SecureCloudStorage/
@@ -61,8 +96,8 @@ SecureCloudStorage/
 ├── app.py
 ├── database/
 │   └── secure_cloud.db
-├── keys/
 ├── logs/
+│   └── activity.log
 ├── storage/
 │   ├── encrypted/
 │   ├── downloads/
@@ -75,75 +110,96 @@ SecureCloudStorage/
 │   ├── file_handler.py
 │   ├── logger.py
 │   └── password.py
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## 🚀 Project Roadmap
+# 🚀 Project Roadmap
 
-### ✅ Phase 1 (Completed)
-- CLI application
-- Authentication
-- File encryption
-- Upload / Download
+## ✅ Phase 1 – Core CLI Application
+
+- User Authentication
+- File Upload & Download
+- Encryption
 - Recycle Bin
 - Activity Logs
 
-### 🚧 Phase 2 (In Progress)
-- SQLite migration ✅
-- bcrypt authentication ✅
-- File metadata management
-- SHA-256 integrity verification
-- Storage quotas
-- Per-user encryption keys
+## ✅ Phase 2 – Secure Backend
 
-### 🔜 Phase 3
-- Flask Web Interface
-- User Dashboard
+- SQLite Migration
+- bcrypt Password Authentication
+- File Metadata Management
+- SHA-256 File Integrity
+- Per-user Encryption Keys
+- Metadata Synchronization
+- Storage Statistics Dashboard
+
+## 🔜 Phase 3 – Flask Web Application
+
+- User Authentication Portal
+- Interactive Dashboard
 - REST APIs
+- Responsive User Interface
 
-### ☁️ Phase 4
+## ☁️ Phase 4 – Cloud Deployment
+
 - AWS Deployment
-- Object Storage
-- Docker
+- Amazon S3 Storage
+- Docker Containerization
 - HTTPS
+- Secure Environment Variables
 
 ---
 
-## 📈 What I'm Learning
+# 🔒 Security Highlights
+
+- Passwords are never stored in plaintext.
+- Every registered user receives a unique encryption key.
+- Files remain encrypted while stored.
+- SHA-256 checksums provide integrity verification.
+- User activities are logged for auditing.
+- File metadata is managed securely using SQLite.
+
+---
+
+# 📚 What I'm Learning
 
 This project is helping me gain practical experience with:
 
 - Secure Authentication
 - Cryptography
+- Encryption & Key Management
 - Password Security
-- SQLite & Databases
-- File Systems
+- SQLite Databases
 - Backend Development
+- File Systems
 - Software Architecture
-- Git & GitHub
 - Secure Coding Practices
+- Git & GitHub Workflow
 
 ---
 
-## 📌 Upcoming Features
+# 🚀 Future Improvements
 
-- SHA-256 file integrity verification
-- Metadata management
-- Storage quotas
-- Per-user encryption keys
-- Cloud deployment
+- Flask Web Interface
+- User Profile Dashboard
+- Role-Based Access Control (RBAC)
 - JWT Authentication
-- HTTPS
-- Docker
+- Multi-Factor Authentication (MFA)
+- Secure File Sharing
+- Storage Quotas
+- AWS S3 Integration
+- Docker Deployment
+- HTTPS Support
 
 ---
 
-## ⭐ Author
+# ⭐ Author
 
 **Rutul Parate**
 
-Cybersecurity Student | Python | Backend Development | Secure Software Engineering
+Cybersecurity & Cloud Computing Enthusiast
 
-This repository documents my journey of building a secure cloud storage system while learning real-world software engineering and cybersecurity concepts.
+This repository documents my journey of building a secure cloud storage system while learning real-world cybersecurity principles, backend engineering, cryptography, and secure software development.
